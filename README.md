@@ -31,7 +31,7 @@ Create a cache directory and fix permissions:
     $ mkdir cache
     $ chmod -R 777 cache/
 
-If you want to modify the layout, you need to run [Compass](http://gifstream.in/s/http://gifstream.florian.ec/game+of+thrones.json):
+If you want to modify the layout you need to run [Compass](http://gifstream.in/s/http://gifstream.florian.ec/game+of+thrones.json):
 
     $ compass compile web/
 
