@@ -26,10 +26,12 @@ Create and edit configuration:
     $ cp config/config.php.dist config.php
     $ vi config/config.php
 
-Create a cache directory and fix permissions:
+Create a cache and directories and fix permissions:
 
     $ mkdir cache
     $ chmod -R 777 cache/
+    $ mkdir logs
+    $ chmod -R 777 logs/
 
 If you want to modify the layout you need to run [Compass](http://gifstream.in/s/http://gifstream.florian.ec/game+of+thrones.json):
 

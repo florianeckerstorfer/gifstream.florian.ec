@@ -16,6 +16,8 @@ use florianeckerstorfer\gifstream\Provider\TumblrServiceProvider;
 use florianeckerstorfer\gifstream\Provider\GifSearchServiceProvider;
 use florianeckerstorfer\gifstream\Provider\GifStreamBuilderServiceProvider;
 use florianeckerstorfer\gifstream\Provider\GifStreamCacheServiceProvider;
+use florianeckerstorfer\gifstream\Provider\QueryLogServiceProvider;
+use florianeckerstorfer\gifstream\Provider\QuerySanitizerServiceProvider;
 
 $app = new Silex\Application();
 
@@ -36,10 +38,15 @@ $app->register(new GifStreamCacheServiceProvider, array(
     'gifstreamcache.cache_dir' => APP_ROOT.'/cache',
     'gifstreamcache.cache_time' => 43200
 ));
+$app->register(new QueryLogServiceProvider, array(
+    'querylog.log_file' => APP_ROOT.'/logs/query.log'
+));
+$app->register(new QuerySanitizerServiceProvider);
 
 $app->get('/{query}.json', function ($query) use($app) {
     if ($query) {
-        $query = urldecode(strip_tags($query));
+        $query = $app['querysanitizer']->sanitize($query);
+        $app['querylog']->log($query);
         $gifStreamCache = $app['gifstreamcache'];
 
         if (true === $gifStreamCache->has($query)) {
@@ -58,8 +65,10 @@ $app->get('/{query}.json', function ($query) use($app) {
 })->bind('gifstream');
 
 $app->get('/', function(Request $request) use($app) {
+    $query = $app['querysanitizer']->sanitize($request->get('query'));
+
     return $app['twig']->render('index.html.twig', array(
-        'query' => strip_tags($request->get('query'))
+        'query' => $query
     ));
 })->bind('index');
 
