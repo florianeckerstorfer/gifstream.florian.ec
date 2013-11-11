@@ -427,14 +427,15 @@ a:hover {
 .container {
   max-width: 600px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
-/* line 17, ../sass/gifstream.scss */
+/* line 18, ../sass/gifstream.scss */
 .footer {
   font-size: 85%;
 }
 
-/* line 22, ../sass/gifstream.scss */
+/* line 23, ../sass/gifstream.scss */
 form .field {
   margin: 10px 0;
 }
