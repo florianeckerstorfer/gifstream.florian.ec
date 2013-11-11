@@ -88,7 +88,7 @@ class GifSearch
                 $this->builder->add(array(
                     'title' => trim(strip_tags($post->caption)),
                     'added' => $date->getTimestamp(),
-                    'file'  => $url
+                    'src'  => $url
                 ));
             }
         }
