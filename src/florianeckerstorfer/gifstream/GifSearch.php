@@ -37,7 +37,7 @@ class GifSearch
     }
 
     /**
-     * Searches Tumblr for the given tag and returns up to 100 GIFs.
+     * Searches Tumblr for the given tag and returns up to 200 GIFs.
      *
      * @param string $tag Tag to search for
      *
@@ -53,11 +53,11 @@ class GifSearch
             if (false === $before) {
                 return;
             }
-        } while (count($this->builder) < 100);
+        } while (count($this->builder) < 200);
     }
 
     /**
-     * Executes a single API request and returns the result.
+     * Executes a single API request and returns the time of the last posting.
      *
      * @param string  $tag    Tag to search for
      * @param integer $before Unix timestamp
