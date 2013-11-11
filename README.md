@@ -1,6 +1,8 @@
 Tumblr GifStreams
 =================
 
+Create [GifStream](http://gifstream.in)s based on Tumblr tags. It runs on [http://gifstream.florian.ec](http://gifstream.florian.ec).
+
 Author
 ------
 
@@ -28,3 +30,17 @@ Create a cache directory and fix permissions:
 
     $ mkdir cache
     $ chmod -R 777 cache/
+
+If you want to modify the layout, you probably want to run [Compass](http://gifstream.in/s/http://gifstream.florian.ec/game+of+thrones.json):
+
+    $ compass compile web/
+
+Or you can make Compass watch for changes:
+
+    $ compass watch web/
+
+
+License
+-------
+
+gifstream.florian.ec is licensed under The MIT License. See the LICENSE file in the projects root directory for more information.
