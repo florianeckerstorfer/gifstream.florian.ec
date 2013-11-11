@@ -58,7 +58,7 @@ class GifStreamBuilder implements \Countable
             'version'    => 1,
             'title'      => sprintf('Tumblr Tag "%s"', $query),
             'identifier' => sprintf('ec.florian.gifstream.%s', str_replace(' ', '-', strtolower($query))),
-            'license'    => '(c)',
+            'license'    => '',
             'files'      => $this->gifs
         );
     }
