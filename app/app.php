@@ -39,7 +39,7 @@ $app->register(new GifStreamCacheServiceProvider, array(
 
 $app->get('/{query}.json', function ($query) use($app) {
     if ($query) {
-        $query = urldecode($query);
+        $query = urldecode(strip_tags($query));
         $gifStreamCache = $app['gifstreamcache'];
 
         if (true === $gifStreamCache->has($query)) {
@@ -59,7 +59,7 @@ $app->get('/{query}.json', function ($query) use($app) {
 
 $app->get('/', function(Request $request) use($app) {
     return $app['twig']->render('index.html.twig', array(
-        'query' => $request->get('query')
+        'query' => strip_tags($request->get('query'))
     ));
 })->bind('index');
 
