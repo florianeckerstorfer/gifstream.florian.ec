@@ -15,4 +15,6 @@ define('WEB_ROOT', __DIR__);
 require_once APP_ROOT.'/vendor/autoload.php';
 require_once APP_ROOT.'/config/config.php';
 
+$debug = false;
+
 require_once APP_ROOT.'/app/app.php';

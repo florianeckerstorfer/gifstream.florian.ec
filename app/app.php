@@ -19,7 +19,7 @@ use florianeckerstorfer\gifstream\Provider\GifStreamCacheServiceProvider;
 
 $app = new Silex\Application();
 
-if ('.dev' === substr($_SERVER['HTTP_HOST'], -4)) {
+if (true === $debug || '.dev' === substr($_SERVER['HTTP_HOST'], -4)) {
     $app['debug'] = true;
 }
 
