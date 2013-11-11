@@ -1,0 +1,13 @@
+{
+    "name": "florianeckerstorfer/gifstream",
+    "description": "Create GifStreams from Tumblr searches",
+    "license": "MIT",
+    "require": {
+        "silex/silex": "1.1.*",
+        "tumblr/tumblr": "0.1.*",
+        "twig/twig": "1.14.*"
+    },
+    "autoload":     {
+        "psr-0": { "florianeckerstorfer\\gifstream": "src/" }
+    }
+}

@@ -1,0 +1,8 @@
+<?php
+
+$config = array(
+    'tumblr'    => array(
+        'consumer_key'    => '',
+        'consumer_secret' => ''
+    )
+);
