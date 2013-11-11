@@ -53,7 +53,7 @@ class GifSearch
             if (false === $before) {
                 return;
             }
-        } while (count($this->builder) < 200);
+        } while (count($this->builder) < 100);
     }
 
     /**

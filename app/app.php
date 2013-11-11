@@ -39,6 +39,7 @@ $app->register(new GifStreamCacheServiceProvider, array(
 
 $app->get('/{query}.json', function ($query) use($app) {
     if ($query) {
+        $query = urldecode($query);
         $gifStreamCache = $app['gifstreamcache'];
 
         if (true === $gifStreamCache->has($query)) {
