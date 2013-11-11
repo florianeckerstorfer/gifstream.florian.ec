@@ -39,7 +39,7 @@ $app->register(new GifStreamCacheServiceProvider, array(
     'gifstreamcache.cache_time' => 43200
 ));
 $app->register(new QueryLogServiceProvider, array(
-    'querylog.log_file' => APP_ROOT.'/logs/query.log'
+    'querylog.log_file' => sprintf('%s/logs/query-%s.log', APP_ROOT, date('Y-m'))
 ));
 $app->register(new QuerySanitizerServiceProvider);
 
