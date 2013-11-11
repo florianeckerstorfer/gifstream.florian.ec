@@ -14,7 +14,7 @@
 <ul>
     {% set url = app.url_generator.generate('gifstream', { 'query': query|url_encode }, true) %}
     <li><a href="{{ url }}">Direct link</a></li>
-    <li><a href="gifstream://{{ url }}">Open in GifStream</a></li>
+    <li><a href="gifstream://{{ url|replace({ 'http://': '' }) }}">Open in GifStream</a></li>
 </ul>
 {% endif %}
 
