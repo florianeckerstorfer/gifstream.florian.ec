@@ -78,6 +78,6 @@ class GifStreamCache
      */
     protected function getCacheFile($query)
     {
-        return sprintf('%s/%s.json', $this->cacheDir, urlencode($query));
+        return sprintf('%s/%s.json', $this->cacheDir, urlencode(strtolower($query)));
     }
 }
