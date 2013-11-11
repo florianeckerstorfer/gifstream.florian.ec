@@ -13,7 +13,8 @@
 <h3>GifStream for <i>{{ query }}</i></h3>
 <ul>
     {% set url = app.url_generator.generate('gifstream', { 'query': query|url_encode }, true) %}
-    <li><a href="http://gifstream.in/s/{{ url }}">{{ url }}</a></li>
+    <li><a href="{{ url }}">Direct link</a></li>
+    <li><a href="gifstream://{{ url }}">Open in GifStream</a></li>
 </ul>
 {% endif %}
 
