@@ -431,11 +431,28 @@ a:hover {
 }
 
 /* line 18, ../sass/gifstream.scss */
+.header {
+  margin-bottom: 1.34em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+}
+/* line 22, ../sass/gifstream.scss */
+.header h1 {
+  margin-bottom: 0;
+}
+/* line 25, ../sass/gifstream.scss */
+.header .tagline {
+  color: #666;
+}
+
+/* line 30, ../sass/gifstream.scss */
 .footer {
+  margin-top: 35px;
+  border-top: 1px solid #ccc;
   font-size: 85%;
 }
 
-/* line 23, ../sass/gifstream.scss */
+/* line 37, ../sass/gifstream.scss */
 form .field {
   margin: 10px 0;
 }

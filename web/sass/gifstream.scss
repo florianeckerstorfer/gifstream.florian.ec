@@ -15,7 +15,21 @@ a {
     padding: 0 10px;
 }
 
+.header {
+    margin-bottom: 1.34em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+    h1 {
+        margin-bottom: 0;
+    }
+    .tagline {
+        color: #666;
+    }
+}
+
 .footer {
+    margin-top: 35px;
+    border-top: 1px solid #ccc;
     font-size: 85%;
 }
 
